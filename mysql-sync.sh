@@ -21,7 +21,7 @@ umask 177
 # .SQL dump
 mysqldump --user=$user --password=$password -h $host  $remote_db_name > $backup_path/$local_db_name-$date.sql
 
-# Eski Dosyalarımızı Siliyoruz
+# Delete old files  10 = days
 find $backup_path/* -mtime +10 -exec rm {} \;
 
 # Restore Local Database
